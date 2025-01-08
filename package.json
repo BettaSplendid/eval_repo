@@ -1,0 +1,10 @@
+{
+  "name": "eval_janvier_html_css_js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "pierrefeuilleciseau.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "private": true
+}

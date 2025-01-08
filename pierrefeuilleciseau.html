@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>La zone du chifoumi</title>
+</head>
+<body>
+<main>
+    <h1>
+        !La zone du chifoumi!
+    </h1>
+    <div class="main_zone">
+        <!--            Joueur!-->
+        <div id="main_zone_left">
+            <button id="player_rock"><img src="images/rock.png" alt="rock" height="75vh"></button>
+            <button id="player_scissor"><img src="images/scissor.png" alt="paper" height="75vh"></button>
+            <button id="player_paper"><img src="images/paper.png" alt="paper" height="75vh"></button>
+        </div>
+        <!--            Resultat!!-->
+        <div id="main_zone_middle">
+            <div id="main_zone_middle_player">
+
+            </div>
+            <div id="main_zone_middle_opponent">
+
+            </div>
+        </div>
+        <!--            Opposant!!!-->
+        <div id="main_zone_right">
+            <img id="IA_rock" src="images/rock.png" alt="rock" height="75vh" width="75vh">
+            <img id="IA_scissor" src="images/scissor.png" alt="paper" height="75vh" width="75vh">
+            <img id="IA_paper" src="images/paper.png" alt="paper" height="75vh" width="75vh">
+        </div>
+    </div>
+    <div id="scoring">
+        <div>
+            Joueur:
+            <div id="player_score">0</div>
+        </div>
+        <div>
+            IA :
+            <div id="IA_score">0</div>
+        </div>
+    </div>
+    <div id="scoring">
+        <button><img src="images/reset.png" alt="Reset"></button>
+    </div>
+    <div class="footer">
+        <a target="_blank" href="https://icons8.com/icon/pyWWFGPi0mCu/scissor">Scissor</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+    </div>
+</main>
+</body>
+</html>
+<script src="pierrefeuilleciseau.js"></script>
+
+<style>
+    body {
+        background-image: url("images/output-onlinepngtools.png");
+    }
+
+    .main_zone {
+        background-color: #001923;
+        height: 60vh;
+        width: 80vw;
+        margin: auto;
+        border-radius: 10vw;
+        display: flex;
+        text-align: center;
+        justify-content: space-between;
+    }
+
+    #main_zone_left {
+        background-color: #62BBE0;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        padding: 1vw;
+        justify-content: space-around;
+    }
+
+    #main_zone_left img:hover{
+        transform: scale(1.1);
+        transition: transform .2s;
+    }
+
+    #main_zone_middle {
+        background-color: #FCB326;
+        flex-grow: 1;
+        padding: 1vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    #main_zone_middle_player {
+        background-color: #6DCEF6;
+        box-shadow: inset 0px 0px 0px 0.1vh #000;
+        border-radius: 1vh;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #main_zone_middle_opponent {
+        background-color: #F16065;
+        box-shadow: inset 0px 0px 0px 0.1vh #000;
+        border-radius: 1vh;
+    }
+
+    #main_zone_right {
+        background-color: #EC1B2E;
+        padding: 1vw;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    #scoring {
+        background-color: #25B5A1;
+        padding: 1vw;
+        margin: auto;
+        width: 78vw;
+        color: white;
+        text-align: center;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    #scoring button {
+        background: none;
+        color: inherit;
+        border: none;
+        padding: 0;
+        font: inherit;
+        cursor: pointer;
+        outline: inherit;
+    }
+
+    .footer {
+        padding: 1vw;
+        margin: auto;
+        text-align: center;
+    }
+
+    .player_pick {
+        animation-duration: 0.5s;
+        animation-name: animate-fade;
+        animation-delay: 0.2s;
+        animation-fill-mode: backwards;
+    }
+
+    @keyframes animate-fade {
+        0% {
+            opacity: 0;
+            transform: translate(-10px)
+        }
+        100% {
+            opacity: 1;
+            transform: translate(0px)
+        }
+    }
+
+    .opponent_pick {
+        animation-duration: 0.5s;
+        animation-name: animate-fade;
+        animation-delay: 0.2s;
+        animation-fill-mode: backwards;
+    }
+
+    @keyframes animate-fade {
+        0% {
+            opacity: 0;
+            transform: translate(10px)
+        }
+        100% {
+            opacity: 1;
+            transform: translate(0px)
+        }
+    }
+
+    .fancy_Leaving {
+        animation-duration: 0.5s;
+        animation-name: animate_leave;
+        animation-delay: 0.2s;
+        animation-fill-mode: backwards;
+    }
+    @keyframes animate_leave{
+        0% {
+            transform: translate(0px);
+        }
+        100% {
+            transform: translate(-10px);
+            display:none
+        }
+    }
+
+</style>
