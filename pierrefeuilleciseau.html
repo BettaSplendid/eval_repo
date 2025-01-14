@@ -41,12 +41,15 @@
             IA :
             <div id="IA_score">0</div>
         </div>
+        <div>
+            <button><img id="Reset" src="images/undo.png" alt="Reset" height="75vh" width="75vh"></button>
+        </div>
     </div>
-    <div id="scoring">
-        <button><img src="images/reset.png" alt="Reset"></button>
-    </div>
+
     <div class="footer">
         <a target="_blank" href="https://icons8.com/icon/pyWWFGPi0mCu/scissor">Scissor</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+        <a href="https://www.flaticon.com/free-icons/rock-and-roll" title="rock and roll icons">Rock and roll icons created by Freepik - Flaticon</a>
+        <a href="https://www.flaticon.com/free-icons/flat-of-the-hand" title="flat of the hand icons">Flat of the hand icons created by Three musketeers - Flaticon</a>
     </div>
 </main>
 </body>
@@ -55,7 +58,7 @@
 
 <style>
     body {
-        background-image: url("images/output-onlinepngtools.png");
+        background-image: url("images/background.jpg");
     }
 
     .main_zone {
@@ -76,6 +79,7 @@
         flex-grow: 1;
         padding: 1vw;
         justify-content: space-around;
+        border-radius: 3vh 0px 0px 0px;
     }
 
     #main_zone_left img:hover{
@@ -105,6 +109,9 @@
         background-color: #F16065;
         box-shadow: inset 0px 0px 0px 0.1vh #000;
         border-radius: 1vh;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     #main_zone_right {
@@ -115,6 +122,7 @@
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
+        border-radius: 0 3vh 0 0;
     }
 
     #scoring {
@@ -126,6 +134,8 @@
         text-align: center;
         display: flex;
         justify-content: space-around;
+        font-size: larger;
+        border-radius: 0 0 3vh 3vh;
     }
 
     #scoring button {
@@ -149,6 +159,7 @@
         animation-name: animate-fade;
         animation-delay: 0.2s;
         animation-fill-mode: backwards;
+        padding:1vh;
     }
 
     @keyframes animate-fade {

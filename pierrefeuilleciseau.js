@@ -3,9 +3,11 @@ console.log('Happy developing ✨')
 const rock = document.querySelector("#player_rock");
 const paper = document.querySelector("#player_paper");
 const scissor = document.querySelector("#player_scissor");
+const reset = document.querySelector("#Reset");
 rock.addEventListener("click", function() {player_select('rock');});
 paper.addEventListener("click", function() {player_select('paper');});
 scissor.addEventListener("click", function() {player_select('scissor');});
+reset.addEventListener("click", function(){clear_everything();});
 
 
 function player_select(player){
@@ -74,36 +76,36 @@ function result_calculation(player, opponent){
         console.log("Win!")
         winner = 'player';
     }
-    score_updating(winner);
+    score_updating(winner, null);
 }
 
-function score_updating(winner){
-    if(winner === 0){
-        return;
+function score_updating(winner, clear){
+    if(clear){
+        const p1_score_area = document.querySelector("#player_score");
+        const p2_score_area = document.querySelector("#IA_score");
+        p1_score_area.innerText = null
+        p2_score_area.innerText = null
+    } else if(winner === 0){
     }
-    const score_area = document.querySelector("#"+ winner + "_score");
-    score_area.innerText = parseInt(score_area.innerText) + 1;
+    else {
+        const score_area = document.querySelector("#"+ winner + "_score");
+        score_area.innerText = parseInt(score_area.innerText) + 1;
+    }
 }
 
 function fancy_overflow_removal(){
     const opponent_section = document.querySelector("#main_zone_middle_opponent");
     const player_selection = document.querySelector("#main_zone_middle_player");
-    console.log(opponent_section.children.length)
     if(opponent_section.children.length > 4){
-        // document.querySelector('#opponent_section').firstElementChild.classList.add('fancy_Leaving')
+        player_selection.firstChild.remove()
         opponent_section.lastChild.remove()
-        let last_child = opponent_section.lastChild
-        // last_child.className = "foo";
-        // last_child.innerText = last_child.innerText
-        last_child.classList.add("foo");
-        last_child.setAttribute("class", "foo");
-        console.log(
-            opponent_section.children[4]
-        )
-
     }
 }
 
 function clear_everything(){
-
+    const opponent_section = document.querySelector("#main_zone_middle_opponent");
+    const player_selection = document.querySelector("#main_zone_middle_player");
+    opponent_section.innerText = ""
+    player_selection.innerText = ""
+    score_updating("", null)
 }
